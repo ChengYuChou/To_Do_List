@@ -13,7 +13,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
 }
 
 h1 {
@@ -64,6 +64,19 @@ h1 {
     text-decoration: line-through;
     color: #888;
 }
+
+.task-item.high {
+    border-left: 4px solid red;
+}
+
+.task-item.medium {
+    border-left: 4px solid orange;
+}
+
+.task-item.low {
+    border-left: 4px solid green;
+}
+
 
 .checkbox {
     margin-right: 10px;
