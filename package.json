@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "moment": "^2.30.1"
+  },
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "待辦事項清單",
+  "main": "todolist.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChengYuChou/To_Do_List.git"
+  },
+  "author": "ChouChengYu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChengYuChou/To_Do_List/issues"
+  },
+  "homepage": "https://github.com/ChengYuChou/To_Do_List#readme"
+}

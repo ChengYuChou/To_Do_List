@@ -13,10 +13,21 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 1000px;
+}
+
+.localtime {
+    position: relative;
+    top: 90px;
+    left: 0px;
+    width: 200px;
+    height: 50px;
+    color: #000;
+    text-align: center;
 }
 
 h1 {
+
     text-align: center;
 }
 
@@ -47,6 +58,13 @@ h1 {
     list-style: none;
     padding: 0;
     margin-top: 20px;
+}
+
+.task-deadline {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 5px;
 }
 
 .task-item {

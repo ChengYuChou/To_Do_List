@@ -10,6 +10,9 @@ function addTask() {
     const taskText = taskInput.value.trim();
     const mission_level = document.getElementById('mission_level');
     const task_level = mission_level.value;
+    const deadline = document.getElementById('deadline');
+    const taskdeadline = deadline.value;
+
 
     if (taskText !== '') {
         const taskList = document.getElementById('task-list');
@@ -22,14 +25,20 @@ function addTask() {
 
         const taskContent = document.createElement('span');
         taskContent.className = 'task-content';
-        taskContent.textContent = `${taskText} [ ${task_level} ]`;
+        taskContent.textContent = `${taskText} [ ${task_level} `;
+
+        const deadlineContent = document.createElement('span');
+        deadlineContent.className = 'task-deadline';
+        deadlineContent.textContent = `截止日期： ${taskdeadline}`;
         
 
         checkbox.addEventListener('change', function() {
             if (checkbox.checked) {
                 taskItem.classList.add('completed');
+                deadlineContent.classList.add('completed');
             } else {
                 taskItem.classList.remove('completed');
+                deadlineContent.classList.remove('completed');
             }
         });
 
@@ -42,11 +51,13 @@ function addTask() {
 
         taskItem.appendChild(checkbox);
         taskItem.appendChild(taskContent);
+        taskItem.appendChild(deadlineContent);
         taskItem.appendChild(deleteBtn);
         taskList.appendChild(taskItem);
 
         sortTaskList(taskList);
         taskInput.value = '';
+        deadline.value = '';
     }
 }
 
