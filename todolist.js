@@ -5,6 +5,13 @@ document.getElementById('new-task').addEventListener('keydown', function(event) 
     }
 });
 
+let totalTask = 0;
+let completedTasks = 0;
+function updateStats() {
+    document.getElementById('total-tasks').textContent = `事項總數： ${totalTask}`;
+    document.getElementById('completed-tasks').textContent = `已完成： ${completedTasks}`;
+}
+
 function addTask() {
     const taskInput = document.getElementById('new-task');
     const taskText = taskInput.value.trim();
@@ -25,7 +32,7 @@ function addTask() {
 
         const taskContent = document.createElement('span');
         taskContent.className = 'task-content';
-        taskContent.textContent = `${taskText} [ ${task_level} `;
+        taskContent.textContent = `${taskText}`;
 
         const deadlineContent = document.createElement('span');
         deadlineContent.className = 'task-deadline';
@@ -36,17 +43,25 @@ function addTask() {
             if (checkbox.checked) {
                 taskItem.classList.add('completed');
                 deadlineContent.classList.add('completed');
+                completedTasks++;
             } else {
                 taskItem.classList.remove('completed');
                 deadlineContent.classList.remove('completed');
+                completedTasks--;
             }
+            updateStats();
         });
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-task';
         deleteBtn.textContent = 'Delete';
         deleteBtn.addEventListener('click', function() {
+            if (checkbox.checked){
+                completedTasks--;
+            }
+            totalTask--;
             taskList.removeChild(taskItem);
+            updateStats();
         });
 
         taskItem.appendChild(checkbox);
@@ -58,6 +73,9 @@ function addTask() {
         sortTaskList(taskList);
         taskInput.value = '';
         deadline.value = '';
+
+        totalTask++;
+        updateStats();
     }
 }
 
@@ -70,3 +88,6 @@ function sortTaskList(taskList) {
 
     tasks.forEach(task => taskList.appendChild(task));
 }
+
+
+
