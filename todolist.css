@@ -1,39 +1,59 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #FFEFCD;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .container {
-    background-color: white;
+    position: fixed;
+    top: 200px;
+    background-color: #A58674;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 1000px;
+    width: 1050px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .localtime {
     position: relative;
-    top: 70px;
-    left: 0px;
-    width: 200px;
-    height: 20px;
-    color: #000;
+    top: -25px;
+    left: 300px;
+    width: 270px;
+    height: 25px;
+    color: #FFEFCD;
     text-align: center;
 }
 
 h1 {
-
+    position: absolute;
+    top: -15%;
+    left: 20%;
+    font-size: 170px;
     text-align: center;
+    color: #5e6632;
 }
 
 .input-section {
     display: flex;
     justify-content: space-between;
+}
+
+.total-tasks {
+    color:#FFEFCD;
+}
+
+.completed-tasks {
+    color: #FFEFCD;
 }
 
 #new-task {
@@ -48,7 +68,7 @@ h1 {
     padding: 6px 10px;
     font-size: 16px;
     border: none;
-    background-color: #28a745;
+    background-color: #E09132;
     color: white;
     cursor: pointer;
     border-radius: 3px;
@@ -58,13 +78,16 @@ h1 {
     display: flexbox;
     width: 270px;
     height: 25px;
-    border: #28a745;
+    color: #FFEFCD;
 }
 
 #task-list {
+    max-height: 500px;
+    overflow-y: auto;
     list-style: none;
     padding: 0;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .task-deadline {
