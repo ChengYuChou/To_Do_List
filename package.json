@@ -1,21 +1,51 @@
 {
-  "dependencies": {
-    "moment": "^2.30.1"
-  },
   "name": "todolist",
   "version": "1.0.0",
   "description": "待辦事項清單",
-  "main": "todolist.js",
-  "devDependencies": {},
+  "main": "main.js",
+  "author": "ChouChengYu",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.zhouchengyu.todolist",
+    "productName": "ToDoList",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": ["dmg", "zip"]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ChengYuChou/To_Do_List.git"
   },
-  "author": "ChouChengYu",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/ChengYuChou/To_Do_List/issues"
   },
